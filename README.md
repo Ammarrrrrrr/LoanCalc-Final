@@ -40,3 +40,7 @@ Where:
 - `t` is the time in months.
 
 This formula helps in determining the amount to be paid towards a loan, considering factors like principal amount, interest rate, and duration of the loan.
+
+![image](https://github.com/Ammarrrrrrr/LoanCalc-Final/assets/44929686/d9339a1c-0647-4204-b448-661b0c07c9e2)
+
+
