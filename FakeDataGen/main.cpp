@@ -9,7 +9,7 @@ int main()
     std::ofstream outputFile("loans.csv");
 
     // Write the header row
-    outputFile << "Loan ID,Principal Amount,Interest Rate,Loan Term,Start Date,Payment Frequency\n";
+    outputFile << "Loan ID,Principal Amount,Interest Rate,Loan Term,Start Date,Payment Frequency,Finish Date\n";
 
     // Generate data for 10 loans
     for (int i = 0; i < 10; ++i) {
@@ -17,13 +17,13 @@ int main()
         const auto loanId = i + 1; 
         const auto principalAmount = faker::Finance::amount(100, 10000); 
         const auto interestRate = faker::Finance::amount(1, 20); 
-        const auto loanTerm = faker::Finance::amount(6, 24); 
+        const auto loanTerm = faker::Finance::amount(6, 24); //months
         const auto startDate = faker::Date::futureDate(5, faker::Date::DateFormat::Timestamp); 
         const auto paymentFrequency = faker::Finance::amount(3, 12); 
-        
+        const auto finishDate = ((stoi(loanTerm) * 30*24*60*60) + stoi(startDate));
         // Write loan data to the CSV file
         outputFile << loanId << "," << principalAmount << "," << interestRate << ","
-                   << loanTerm << "," << startDate << "," << paymentFrequency <<  "\n";
+                   << loanTerm << "," << startDate << "," << paymentFrequency << "," << finishDate <<  "\n";
     }
 
     // Close the file
