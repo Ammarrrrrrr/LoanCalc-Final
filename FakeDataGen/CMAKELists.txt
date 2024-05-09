@@ -1,0 +1,15 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(TestFaker
+   CXX LANGUAGES
+   VERSION 0.0.1
+)
+
+set(BUILD_FAKER_TESTS OFF)
+
+add_subdirectory(faker-cxx)
+
+set (CMAKE_CXX_STANDARD 23)
+add_executable(a.out main.cpp)
+
+target_link_libraries(a.out faker-cxx)

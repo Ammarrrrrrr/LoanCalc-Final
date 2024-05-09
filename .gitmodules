@@ -1,0 +1,4 @@
+[submodule "faker-cxx"]
+	path = FakeDataGen/faker-cxx
+	url = https://github.com/cieslarmichal/faker-cxx.git
+	ignore = all
